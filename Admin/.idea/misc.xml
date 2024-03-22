@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../ServiceRegistry/pom.xml" />
         <option value="$PROJECT_DIR$/../ApiGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/../Registration/pom.xml" />
+        <option value="$PROJECT_DIR$/../sportathon/pom.xml" />
       </list>
     </option>
   </component>

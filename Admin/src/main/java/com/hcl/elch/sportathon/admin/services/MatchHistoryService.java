@@ -24,20 +24,29 @@ public class MatchHistoryService {
     @Autowired
     private MatchResultRepository matchResultRepository;
 
-    public List<MatchHistoryPojo> getMatchHistoryWithResults(Long playerId) {
-        List<MatchDetails> matches = this.matchDetailRepository.findAll().stream()
-                .filter(match -> match.getTeamId1().equals(playerId) || match.getTeamId2().equals(playerId))
-                .collect(Collectors.toList());
-        List<MatchHistoryPojo> matchHistories = new ArrayList<>();
-        for (MatchDetails match : matches) {
-            Optional<MatchResult> resultOpt = matchResultRepository.findById(match.getMatchID());
-            if (resultOpt.isPresent()) {
-                matchHistories.add(new MatchHistoryPojo(match, resultOpt.get()));
-            } else {
-                matchHistories.add(new MatchHistoryPojo(match, null));
-            }
-        }
-        return matchHistories;
+    public List<MatchHistoryPojo> getMatchHistoryWithResults(Long teamId) {
+        List<MatchResult> allMatchResults = matchResultRepository.findAll();
+        return allMatchResults.stream()
+                .filter(matchResult ->
+                        matchResult.getMatchId().getTeamId1().equals(teamId) ||
+                                matchResult.getMatchId().getTeamId2().equals(teamId))
+                .map(matchResult -> {
+                    MatchDetails matchDetails = matchResult.getMatchId();
+                    Long winningTeamId = matchResult.getWinningTeamId();
+                    boolean isTeam1 = matchDetails.getTeamId1().equals(teamId);
+                    MatchHistoryPojo matchHistory = new MatchHistoryPojo();
+                    matchHistory.setMatchId(matchDetails.getMatchID());
+                    matchHistory.setGameName(matchDetails.getGameName());
+                    matchHistory.setTeamId1(teamId);
+                    matchHistory.setTeamId2(isTeam1 ? matchDetails.getTeamId2(): matchDetails.getTeamId1());
+                    matchHistory.setMatchDate(matchDetails.getMatchDate());
+                    matchHistory.setStartTime(matchDetails.getStartTime());
+                    matchHistory.setEndTime(matchDetails.getEndTime());
+                    matchHistory.setVenue(matchDetails.getVenue().getVenueName());
+                    matchHistory.setWinningTeamId(winningTeamId);
+                    matchHistory.setWasWinner(matchResult.getWinningTeamId().equals(teamId));
+                    return matchHistory;
+                }).collect(Collectors.toList());
     }
 
 }

@@ -1,0 +1,8 @@
+[2024-03-22 12:33:19,316] - [com.zaxxer.hikari.pool.HikariPool] [run] -> (WARN) [HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18h13m24s265ms913µs300ns).] 
+[2024-03-22 12:36:14,119] - [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver] [getClusterEndpoints] -> (INFO) [Resolving eureka endpoints via configuration] 
+[2024-03-22 12:41:14,127] - [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver] [getClusterEndpoints] -> (INFO) [Resolving eureka endpoints via configuration] 
+[2024-03-22 12:46:14,131] - [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver] [getClusterEndpoints] -> (INFO) [Resolving eureka endpoints via configuration] 
+[2024-03-22 12:51:14,149] - [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver] [getClusterEndpoints] -> (INFO) [Resolving eureka endpoints via configuration] 
+[2024-03-22 12:56:14,162] - [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver] [getClusterEndpoints] -> (INFO) [Resolving eureka endpoints via configuration] 
+[2024-03-22 13:01:14,191] - [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver] [getClusterEndpoints] -> (INFO) [Resolving eureka endpoints via configuration] 
+[2024-03-22 13:06:14,208] - [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver] [getClusterEndpoints] -> (INFO) [Resolving eureka endpoints via configuration] 

@@ -1,16 +1,26 @@
 package com.hcl.elch.sportathon.admin.pojo;
 
-import com.hcl.elch.sportathon.admin.entities.MatchDetails;
-import com.hcl.elch.sportathon.admin.entities.MatchResult;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
+
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class MatchHistoryPojo {
-    private MatchDetails matchDetails;
-    private MatchResult matchResult;
+    private Long matchId;
+    private String gameName;
+    private Long teamId1;
+    private Long teamId2;
+    private LocalDate matchDate;
+    private LocalTime startTime;
+    private LocalTime endTime;
+    private String venue;
+    private Long winningTeamId;
+    private Boolean wasWinner;
 }
