@@ -10,22 +10,20 @@
         <module name="loginms" />
         <module name="ServiceRegistry" />
         <module name="Admin" />
+        <module name="GatewaySecurity" />
         <module name="ApiGateway" />
         <module name="Registration" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Admin" target="17" />
-      <module name="ApiGateway" target="17" />
       <module name="loginms" target="17" />
-      <module name="Registration" target="17" />
-      <module name="ServiceRegistry" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Admin" options="-parameters" />
       <module name="ApiGateway" options="-parameters" />
+      <module name="GatewaySecurity" options="-parameters" />
       <module name="Registration" options="-parameters" />
       <module name="ServiceRegistry" options="-parameters" />
       <module name="loginms" options="-parameters" />
